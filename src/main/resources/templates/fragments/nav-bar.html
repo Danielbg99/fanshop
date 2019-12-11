@@ -1,0 +1,28 @@
+<th:block>
+    <th:block sec:authorize="isAuthenticated()">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" th:href="@{/home}">FanShop</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#userNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="userNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" th:href="@{/home}">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" th:href="@{/fanShop/create}">Create Article</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" th:href="@{http://localhost:2210/}" >Back to AutoDealz</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </th:block>
+</th:block>
