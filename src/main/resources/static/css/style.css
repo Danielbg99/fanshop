@@ -67,3 +67,11 @@ footer {
     background-color: rgba(0,0,0,0.6);
     font-weight: bold;
 }
+.bg-image-article-details {
+    background-color: white;
+    font-weight: bold;
+}
+.bg-image-article-all {
+    background-color: rgba(255, 255, 255, 0.7);
+    font-weight: bold;
+}

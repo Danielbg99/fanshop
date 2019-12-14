@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="~{fragments/head}"></th:block>
+</head>
+<body>
+<div class="container-fluid">
+    <header>
+        <th:block th:include="~{fragments/nav-bar}"></th:block>
+    </header>
+    <main class="mt-5">
+        <div class="bg-image-article-all w-75 mx-auto">
+            <span style="visibility: hidden">....</span>
+            <h1 class="text-center bold font-weight-bold text-dark">All articles</h1>
+            <hr class="hr-2 bg-light">
+            <table class="table w-75 mx-auto text-center">
+                <thead>
+                <tr class="row mx-auto">
+                    <th class="col-md-1 text-center text-dark">#</th>
+                    <th class="col-md-3 text-center text-dark">Name</th>
+                    <th class="col-md-3 text-center text-dark">Price</th>
+                    <th class="col-md-4 text-center text-dark">Details</th>
+                </tr>
+                </thead>
+                <tbody>
+                <th:block th:each="article, iter : ${articles}">
+                    <tr class="row mx-auto text-white">
+                        <th class="col-md-1 text-center text-dark" th:utext="${iter.index + 1}"></th>
+                        <td class="col-md-3 text-center text-dark" th:utext="${article.name}"></td>
+                        <td class="col-md-3 text-center text-dark" th:utext="${article.price}"></td>
+                        <td class="col-md-4 text-center text-dark">
+                            <a th:href="@{/details/{id}(id=${article.id})}"
+                               class="btn btn-secondary glow-button font-weight-bold">Details</a>
+                        </td>
+                    </tr>
+                </th:block>
+                </tbody>
+            </table>
+            <hr class="hr-2 bg-dark">
+            <span style="visibility: hidden">....</span>
+        </div>
+    </main>
+    <footer>
+        <th:block th:include="~{fragments/footer}"></th:block>
+    </footer>
+</div>
+</body>
+</html>

@@ -11,19 +11,16 @@
         <th:block th:include="~{fragments/nav-bar}"></th:block>
     </header>
     <main>
-        <div class="login d-flex justify-content-center mt-3">
-            <form>
-                <div class="row">
-                    <form class="form-inline">
-                        <i class="fas fa-search" aria-hidden="true"></i>
-                        <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
-                               aria-label="Search">
-                    </form>
-                    <div class="col-auto">
-                        <div class="button-holder mt-0 d-flex justify-content-center">
-                            <button type="submit" class="btn bg-hero glow-button">Search...</button>
-                        </div>
-                    </div>
+        <div class="mt-5 d-flex justify-content-center">
+            <form class="form mt-5 d-flex justify-content-between w-50" th:action="@{/all}" th:method="get">
+                <div class="form-group w-75">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <input name="name" class="form-control form-control-sm ml-3 w-75 py-2" type="text"
+                           placeholder="Search"
+                           aria-label="Search">
+                </div>
+                <div class="button-holder d-flex justify-content-center w-25">
+                    <button type="submit" class="btn bg-hero glow-button">Search...</button>
                 </div>
             </form>
         </div>
